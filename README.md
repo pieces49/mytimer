@@ -31,4 +31,5 @@
  목록 : 줄의 처음을 - 또는 1.로 시작
  코드블럭 : 줄의 처음을 Tab으로 시작
 ```
-> [놀부의 마크다운 사용법](http://nolboo.github.io/blog/2014/04/15/how-to-use-markdown/)
+> [마크다운 사용법-놀부님](http://nolboo.github.io/blog/2014/04/15/how-to-use-markdown/)
+> [깃허브 취향의 마크다운 문법-놀부님](http://nolboo.github.io/blog/2014/03/25/github-flavored-markdown/)
