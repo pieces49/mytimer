@@ -28,6 +28,16 @@
 - 타이머( 타이머가 동작하는 화면 )
 
 ### 참고사항
+- 코도바 cli 5.0.0 이상에서 안드로이드 4.1.x 버전 에뮬레이터 실행 시 미동작 대처법
+	- platforms/cordova/lib/device.js 의 101번 라인을 아래와 같이 변경 
+	- adb 옵션중 `-d` 옵션이 `install` 옵션 뒤에 있으면 안되기 때문
+```
+var cmd = 'adb -d -s ' + resolvedTarget.target + ' install -r "' + apk_path + '"';
+```
+- genymotion을 사용하여 에뮬리에팅 할 경우 ionic command( 첫번째 인자로 emulate 가 아닌 `run` 옵션을 이용한다. )
+```
+ionic run android
+```
 - 간단한 마크다운 문법
 ```
  볼드체 : **볼드체**
