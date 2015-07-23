@@ -6,9 +6,8 @@
 ## 이번에 경험 해볼 것
 - Ionic : Cordova 기반의 하이브리드 앱을 만들기 위한 wrapper framework
 - angular.js : javascript 기반 Frontend mvc framework
-- docker : linux 기반 가상화 컨테이너
 - bootstrap : Frontend css framework
-- grunt : javascript task 기반 build tool
+- gulp : stream 기반 build tool
  
 ## 기능 요구 사항
 - 해당 어플리케이션은 모든 스마트 디바이스 및 웹 브라우저에서 동작하여야 한다.
