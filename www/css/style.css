@@ -1,1 +1,17 @@
 /* Empty. Add your own CSS if you like */
+.timer-name {
+	display: inline-block;
+}
+
+.timer-icon {
+    font-size: x-large;
+    margin: 0 10px;
+    color: #F37474;
+}
+
+.timer-icon-option {
+	font-size: x-large;
+    margin: 0 10px;
+    color: #F37474;
+    float: right;	
+}

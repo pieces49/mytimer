@@ -1,0 +1,12 @@
+<ion-view view-title="List">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="timer in timers" type="item-text-wrap" href="#/tab/timer/{{timer.id}}">
+        <span class="ion-android-stopwatch timer-icon"></span>
+        <h2 class="timer-name">{{timer.name}}</h2>
+        <span class="ion-android-trash timer-icon-option" ng-click="delete( timer, $event )"></span>
+        <span class="ion-android-settings timer-icon-option"></span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

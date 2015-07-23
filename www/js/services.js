@@ -49,6 +49,42 @@ angular.module('starter.services', [])
   }
 })
 
+.factory( 'Timers', function () {
+  var timers = [
+    {
+      id: 0,
+      name: '첫번째 타이머',
+      desc: '제가 처음으로 만들어 보았어요'
+    },
+    {
+      id: 1,
+      name: '2nd timer',
+      desc: 'make a ramen timer'
+    }
+  ];
+
+  return {
+    all: function () {
+      return timers;
+    },
+    get: function ( timerId ) {
+      for ( var i = 0; i < timers.length; i++ ) {
+        if ( timers[ i ].id === parseInt( timerId ) ) {
+          return timers[ i ];
+        }
+      }
+      return null;
+    },
+    add: function ( timer ) {
+      timer.id = timers[ timers.length - 1 ].id + 1;
+      timers.push( timer );
+    },
+    remove: function ( timer ) {
+      timers.splice( timers.indexOf( timer ), 1 );
+    }
+  }
+} )
+
 /**
  * A simple example service that returns some data.
  */

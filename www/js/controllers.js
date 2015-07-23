@@ -1,13 +1,33 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
   }
 })
+
+.controller( 'TimersCtrl', function ( $scope, $stateParams, Timers ) {
+  $scope.timers = Timers.all();
+
+  $scope.delete = function ( timer, $event ) {
+    $event.preventDefault();
+    Timers.remove( timer );
+  }
+} )
+
+.controller( 'TimerDetailCtrl', function ( $scope, $stateParams, Timers ) {
+  $scope.timer = Timers.get( $stateParams.timerId );
+} )
+
+.controller( 'RegisterCtrl', function ( $scope, $state, $stateParams, Timers ) {
+  $scope.timer = {};
+
+  $scope.register = function () {
+    Timers.add( $scope.timer );
+    $state.go( 'tab.list' );
+  }
+} )
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
