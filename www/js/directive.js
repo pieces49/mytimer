@@ -59,8 +59,8 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 		template: '<canvas></canvas>',
 		link: function ( scope, el ) {
 
-			var canvas = el[ 0 ];
-			var ctx = canvas.getContext( '2d' );
+			scope.canvas = el.find( 'canvas' )[ 0 ];
+			scope.ctx = scope.canvas.getContext( '2d' );
 
 			var constant = {
 				TICK_WIDTH: 15,
@@ -69,7 +69,7 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 				DEGREE_DIAL_MARGIN: 55,
 				TRACKING_DIAL_MARGIN: 80,
 				DEGREE_ANNOTATIONS_TEXT_SIZE: 18,
-				DEGREE_OUTER_DIAL_MARGIN: DEGREE_DIAL_MARGIN,
+				DEGREE_OUTER_DIAL_MARGIN: 55,
 
 				CENTROID_STROKE_STYLE: 'rgba(0, 0, 0, 0.5)',
 				CENTROID_FILL_STYLE:'rgba(80, 190, 240, 0.6)',
@@ -84,8 +84,8 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 			};
 
 			var circle = {
-				x: canvas.width / 2,
-				y: canvas.height / 2,
+				x: scope.canvas.width / 2,
+				y: scope.canvas.height / 2,
 				radius: 150
 			};
 
@@ -93,11 +93,12 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 
 			
 			scope.$watch( 'isPlay', function () {
-
+				console.log( 'watching' );
 				if ( scope.isPlay ) {
-					drawCentroid( ctx, constant, circle );
+					drawCentroid( scope.ctx, constant, circle );
 					// P49Timer.start();
 				} else {
+					drawCentroid( scope.ctx, constant, circle );
 					// P49Timer.stop();
 				}
 				
