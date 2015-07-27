@@ -1,7 +1,13 @@
 <ion-view view-title="{{timer.name}}">
-  <ion-content class="padding">
-    <p>
+  <ion-content>
+    <p class="padding">
       {{timer.desc}}
     </p>
+    <p49-timer duration="timer.duration" is-play="timer.isPlay"></p49-timer>
+    <div class="button-bar">
+	    <a class="button button-full button-royal" ng-click="timer.isPlay = true" ng-disabled="timer.isPlay">Start</a>
+	    <a type="button" class="button button-full" ng-click="timer.isPlay = false" ng-disabled="!timer.isPlay">Stop</a>
+    </div>
+    
   </ion-content>
 </ion-view>

@@ -4,14 +4,26 @@
 }
 
 .timer-icon {
-    font-size: x-large;
-    margin: 0 10px;
-    color: #F37474;
+	font-size: x-large;
+	margin: 0 10px;
+	color: #F37474;
 }
 
 .timer-icon-option {
 	font-size: x-large;
-    margin: 0 10px;
-    color: #F37474;
-    float: right;	
+	margin: 0 10px;
+	color: #F37474;
+	float: right;	
+}
+
+button.button-half {
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	margin-right: 0;
+	margin-left: 0;
+	border-right-width: 0;
+	border-left-width: 0;
+	border-radius: 0; }
 }

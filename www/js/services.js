@@ -54,12 +54,16 @@ angular.module('starter.services', [])
     {
       id: 0,
       name: '첫번째 타이머',
-      desc: '제가 처음으로 만들어 보았어요'
+      desc: '제가 처음으로 만들어 보았어요',
+      isPlay: false,
+      duration: 1000 * 5
     },
     {
       id: 1,
       name: '2nd timer',
-      desc: 'make a ramen timer'
+      desc: 'make a ramen timer',
+      isPlay: false,
+      duration: 1000 * 3
     }
   ];
 
