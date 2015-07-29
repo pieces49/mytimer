@@ -18,6 +18,9 @@ angular.module('starter.controllers', [])
 
 .controller( 'TimerDetailCtrl', function ( $scope, $stateParams, Timers ) {
   $scope.timer = Timers.get( $stateParams.timerId );
+  // 타이머 시작 상태를 false로 초기화
+  $scope.timer.isRunning = false;
+
 } )
 
 .controller( 'RegisterCtrl', function ( $scope, $state, $stateParams, Timers ) {
