@@ -3,7 +3,7 @@
     <p class="padding">
       {{timer.desc}}
     </p>
-    <p49-timer duration="timer.duration" is-running="timer.isRunning"></p49-timer>
+    <p49-timer duration="timer.duration" is-running="timer.isRunning" end="finish(message)"></p49-timer>
     <div class="button-bar">
 	    <a class="button button-full button-royal" ng-click="timer.isRunning = true" ng-disabled="timer.isRunning">Start</a>
 	    <a type="button" class="button button-full" ng-click="timer.isRunning = false" ng-disabled="!timer.isRunning">Stop</a>

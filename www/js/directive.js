@@ -68,7 +68,7 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 		scope: {
 			duration: '=',
 			isRunning: '=',
-			finish: '='
+			end: '&'
 		},
 		template: '<canvas width="300" height="300">Browser dose not support canvas.</canvas>',
 		link: function ( scope, el ) {
@@ -222,8 +222,8 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 				
 				if ( timer.isRunning() && timer.getElapsedTime() > timerSetting * 1000 ) {
 					timer.stop();
-					scope.isRunning = false;
-					
+					scope.end( { message: false } );
+					scope.$apply();
 				} else if ( timer.isRunning() ) {
 					reDraw();
 					requestAnimationFrame( animate );
@@ -271,6 +271,7 @@ angular.module( 'p49Timer', [] ).directive( 'p49Timer', [ '$compile', function (
 				} else {
 					
 					timer.stop();
+
 				}
 
 				timer.reset();
